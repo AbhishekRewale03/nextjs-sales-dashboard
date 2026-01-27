@@ -36,24 +36,23 @@ The dashboard allows users to view and analyze yearly sales data using charts an
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
+```bash
 app/
-├─ page.tsx
-│ └─ Home page
-│
+├─ page.tsx            # Home page
 ├─ dashboard/
-│ └─ page.tsx
-│ └─ Dashboard page
+│  └─ page.tsx         # Dashboard page
 
 components/
 └─ charts/
-├─ SalesBarChart.tsx
-└─ SalesLineChart.tsx
+   ├─ SalesBarChart.tsx
+   └─ SalesLineChart.tsx
 
 data/
-└─ salesData.ts
-└─ Mock sales data
+└─ salesData.ts        # Mock sales data
+```
+
 
 
 
