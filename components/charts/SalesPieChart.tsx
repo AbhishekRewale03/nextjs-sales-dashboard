@@ -21,6 +21,7 @@ const COLORS = [
   "#C9CBCF",
 ];
 
+
 const SalesPieChart = ({ data, year }: Props) => {
   return (
     <div>

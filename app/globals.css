@@ -3,7 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --primary: 210 100% 43%;        /* #0969da */
+  --primary-foreground: 0 0% 100%; /* white text on blue */
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {

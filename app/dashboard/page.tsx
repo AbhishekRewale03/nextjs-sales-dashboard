@@ -9,6 +9,14 @@ import SalesPieChart from "@/components/charts/SalesPieChart";
 
 import { DollarSign, Calendar, Filter } from "lucide-react";
 
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+
 export default function DashboardPage() {
   const [year, setYear] = useState<YearKey>("2025");
   const [chartType, setChartType] = useState<"bar" | "pie" | "line">("bar");
@@ -94,20 +102,26 @@ export default function DashboardPage() {
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Select Year
               </p>
-              <select
-                value={year}
-                onChange={(e) => setYear(e.target.value as YearKey)}
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 
-                   text-sm font text-slate-900 cursor-pointer
-                   transition-all focus:outline-none focus:ring-2 focus:ring-slate-900/10
-                   hover:border-slate-400"
-              >
-                {years.map((year) => (
-                  <option key={year} value={year}>
-                    {year}
-                  </option>
-                ))}
-              </select>
+
+              <Select value={year} onValueChange={(v) => setYear(v as YearKey)}>
+                <SelectTrigger
+                  className="w-full px-4 py-5 text-sm font bg-white border-2 border-slate-300 text-slate-900 rounded-lg hover:border-slate-400
+                focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all duration-200 cursor-pointer"
+                >
+                  <SelectValue placeholder="Select Year" />
+                </SelectTrigger>
+
+                <SelectContent
+                  position="popper"
+                  className="z-50 w-[--radix-select-trigger-width] bg-white border border-slate-200 rounded-lg shadow-lg"
+                >
+                  {years.map((y) => (
+                    <SelectItem key={y} value={y}>
+                      {y}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             {/* Min Sales */}
@@ -120,7 +134,7 @@ export default function DashboardPage() {
                 value={minSales}
                 onChange={(e) => setMinSales(e.target.value)}
                 placeholder="Enter amount"
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5
+                className="w-full rounded-lg border-2 border-slate-300 bg-white px-4 py-2.5
                    text-sm font text-slate-900 placeholder-slate-400
                    transition-all focus:outline-none focus:ring-2 focus:ring-slate-900/10
                    hover:border-slate-400"
@@ -132,20 +146,27 @@ export default function DashboardPage() {
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Chart Type
               </p>
-              <select
+
+              <Select
                 value={chartType}
-                onChange={(e) =>
-                  setChartType(e.target.value as "bar" | "pie" | "line")
-                }
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5
-                   text-sm font text-slate-900 cursor-pointer
-                   transition-all focus:outline-none focus:ring-2 focus:ring-slate-900/10
-                   hover:border-slate-400"
+                onValueChange={(v) => setChartType(v as "bar" | "pie" | "line")}
               >
-                <option value="bar">Bar Chart</option>
-                <option value="line">Line Chart</option>
-                <option value="pie">Pie Chart</option>
-              </select>
+                <SelectTrigger
+                  className="w-full px-4 py-5 text-sm font-medium bg-white border-2 border-slate-300 text-slate-900 rounded-lg hover:border-slate-400
+                         focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all duration-200 cursor-pointer"
+                >
+                  <SelectValue placeholder="Select Chart Type" />
+                </SelectTrigger>
+
+                <SelectContent
+                  position="popper"
+                  className="z-50 w-[--radix-select-trigger-width] bg-white border border-slate-200 rounded-lg shadow-lg"
+                >
+                  <SelectItem value="bar">Bar Chart</SelectItem>
+                  <SelectItem value="line">Line Chart</SelectItem>
+                  <SelectItem value="pie">Pie Chart</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
             {/* Reset */}
