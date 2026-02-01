@@ -18,7 +18,7 @@ export default function HomePage() {
 
         <button
           onClick={() => router.push("/dashboard")}
-          className="mt-4 px-6 py-3 bg-gray-900 text-white rounded-xl text-sm font-medium hover:bg-gray-800 transition-colors"
+          className="mt-4 px-6 py-3  bg-[#0969da] text-white rounded-xl text-sm font-medium hover:bg-gray-800 transition-colors"
         >
           Go to Dashboard
         </button>

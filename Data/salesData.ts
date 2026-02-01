@@ -3,10 +3,10 @@ export type SalesDataItem = {
   sales: number;
 };
 
-export type YearKey = "2022" | "2023" | "2024";
+export type YearKey = "2023" | "2024" | "2025";
 
 export const salesData: Record<YearKey, SalesDataItem[]> = {
-  "2022": [
+  "2023": [
     { month: "Jan", sales: 32000 },
     { month: "Feb", sales: 28000 },
     { month: "Mar", sales: 45000 },
@@ -20,7 +20,7 @@ export const salesData: Record<YearKey, SalesDataItem[]> = {
     { month: "Nov", sales: 85000 },
     { month: "Dec", sales: 95000 },
   ],
-  "2023": [
+  "2024": [
     { month: "Jan", sales: 38000 },
     { month: "Feb", sales: 35000 },
     { month: "Mar", sales: 52000 },
@@ -34,7 +34,7 @@ export const salesData: Record<YearKey, SalesDataItem[]> = {
     { month: "Nov", sales: 91000 },
     { month: "Dec", sales: 105000 },
   ],
-  "2024": [
+  "2025": [
     { month: "Jan", sales: 42000 },
     { month: "Feb", sales: 39000 },
     { month: "Mar", sales: 58000 },
@@ -50,4 +50,4 @@ export const salesData: Record<YearKey, SalesDataItem[]> = {
   ],
 };
 
-export const years: YearKey[] = ["2022", "2023", "2024"];
+export const years: YearKey[] = ["2023", "2024", "2025"];

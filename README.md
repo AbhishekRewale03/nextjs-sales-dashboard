@@ -20,7 +20,8 @@ The dashboard allows users to view and analyze yearly sales data using charts an
 - View sales data for different years (2022, 2023, 2024)
 - Display total sales and number of active months
 - Filter sales based on a minimum sales value
-- Toggle between **Bar Chart** and **Line Chart**
+- Toggle between **Bar Chart** and **Line Chart** and **Pie Chart**
+- Reset filters to default values
 - Clean, minimal, and responsive UI
 - Simple and readable code structure
 
@@ -47,7 +48,8 @@ app/
 components/
 └─ charts/
    ├─ SalesBarChart.tsx
-   └─ SalesLineChart.tsx
+   ├─ SalesLineChart.tsx
+   └─ SalesPieChart.tsx
 
 data/
 └─ salesData.ts        # Mock sales data
